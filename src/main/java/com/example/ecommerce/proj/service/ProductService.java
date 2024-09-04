@@ -23,4 +23,11 @@ public class ProductService {
     public Product getProductById(int id) {
         return repo.findById(id).orElse(null);
     }
+
+    public void deleteProduct(int id) {
+        repo.deleteById(id);
+    }
+    public Product updateProduct (Product product){
+        return repo.save(product);
+    }
 }
